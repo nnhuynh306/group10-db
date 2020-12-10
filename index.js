@@ -20,7 +20,7 @@ app.use('/featured', require(__dirname + '/routes/featured.js'));
 app.use('/recipes', require(__dirname + '/routes/recipes.js'));
 app.use('/videos', require(__dirname + '/routes/videos.js'));
 app.use('/sort', require(__dirname + '/routes/sort.js'));
-
+app.use('/search', require(__dirname + '/routes/search.js'));
 
 app.get('/', (req, res) => {
     res.locals.pageTitle = `GROUP 10`
