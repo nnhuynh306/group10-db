@@ -6,15 +6,38 @@
 					<div>
 						<ul>
 							{{#each data}}
-							<li>
-								<a href="index.html"><img src="{{smallImagePath}}" alt="Image"></a>
+								{{#ifNotEven @index}}
+									<li>
+								<a href="featured?id={{../id}}"><img src="{{../smallImagePath}}" alt="Image"></a>
 								<div>
-									<h3><a href="featured.html">{{title}}</a></h3>
-									<p>
-										{{summary}}
-									</p>
+									<h3><a href="featured?id={{../id}}">{{../title}}</a></h3>
+									<div>
+										<p>
+											{{../summary}}
+										</p>
+										<ul>
+											{{#each ../Ingredients}}
+												<li>
+													{{title}}
+												</li>
+											{{/each}}
+										</ul>
+									</div>
 								</div>
 							</li>
+								{{else}}
+									<li>
+									<a href="featured?id={{../id}}"><img src="{{../smallImagePath}}" alt="Image"></a>
+									<div>
+										<h3><a href="featured?id={{../id}}">{{../title}}</a></h3>
+										<p>
+										{{../summary}}
+										</p>
+									</div>
+									</li>
+				
+								{{/ifNotEven}}
+							
 							{{/each}}
 						</ul>
 					</div>
