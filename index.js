@@ -19,6 +19,10 @@ app.get('/', (req, res) => {
 })
 
 
+app.get('/sortAtoZ',(req,res)=>{
+    res.render('AtoZ')
+});
+
 app.set('port', process.env.PORT || 3000);
 app.listen(app.get('port'), (req, res) => {
 
