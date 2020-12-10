@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
         res.locals.data = data
         res.render('recipes')
         
-      }); 
+      })
 } )
 
 
