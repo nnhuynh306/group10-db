@@ -5,14 +5,34 @@ app.use(express.static(__dirname + '/public'))
 
 const ehbs = require('express-handlebars')
 
+var ifCond = (v1, v2, options) => {
+    if(v1 === v2) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  };
+
+var  ifNotEven = (conditional, options) => {
+    if((conditional % 2) != 0) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  };
+
 app.engine('hbs', ehbs({
     extname: 'hbs',
     defaultLayout: 'layout',
     layoutsDir: __dirname + '/views/layout',
     partialsDir: __dirname + '/views/partials',
+    helpers: {
+        ifCond: ifCond,
+        ifNotEven: ifNotEven
+      },
     runtimeOptions:{
         allowProtoPropertiesByDefault: true
       }
+
 }))
 
 app.set('view engine', 'hbs');
@@ -30,6 +50,8 @@ app.get('/', (req, res) => {
     res.locals.homeClass = 'current'
     res.render('homepage')
 })
+
+app
 
 app.set('port', process.env.PORT || 3000);
 app.listen(app.get('port'), (req, res) => {

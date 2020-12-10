@@ -1,6 +1,7 @@
-const express = require('express')
+const express = require('express');
+const controller = require('./../controller/recipeController.js');
 const router = express.Router();
-const models = require('../models')
+const recipeController = require('./../controller/recipeController.js')
 
 router.get('/', (req, res) => {
     res.locals.pageTitle = "A to Z Recipes - Food & Recipes Web Template"
@@ -8,15 +9,15 @@ router.get('/', (req, res) => {
     res.locals.mssv = '18127014'
     res.locals.hoten = "Huỳnh Nhật Nam"
     res.locals.email = "18127014@student.hcmus.edu.vn"
-
-    res.render('recipes')
+    controller.getAll().then(data=> {
+        res.locals.data = data
+        res.render('recipes')
+        
+      }); 
 } )
 
-router.get('/sync', (req, res) => {
-    models.sequelize.sync().then(() => {
-        res.send("db")
-    })
-} )
+
+
 
 
 module.exports = router
