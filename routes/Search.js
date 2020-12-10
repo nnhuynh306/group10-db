@@ -5,12 +5,7 @@ const Op = require('sequelize').Op;
 const models = require('../models')
 
 
-router.get('/', function(req, res) {
-    res.render('search')
-})
-
-
-router.get('/keyword', (req, res) => {
+router.get('/', (req, res) => {
     let keyword = req.query.keyword;
     let temp = '%' +  keyword + '%';
     models.Recipe.findAll({
@@ -36,6 +31,10 @@ router.get('/keyword', (req, res) => {
     })
     .then(data => {
         res.locals.data = data;
+        res.locals.homeClass = 'current'
+        res.locals.mssv = '18127092'
+        res.locals.hoten = "Phạm Vũ Duy"
+        res.locals.email = "18127092@student.hcmus.edu.vn"
         res.render('search')
     })
 });
