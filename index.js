@@ -24,6 +24,10 @@ app.get('/sortAtoZ',(req,res)=>{
     res.render('AtoZ')
 });
 
+app.get('/', (req, res) => {
+    res.render('homepage')
+})
+
 app.set('port', process.env.PORT || 3000);
 app.listen(app.get('port'), (req, res) => {
 
