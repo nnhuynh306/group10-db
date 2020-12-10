@@ -8,9 +8,9 @@
 							{{#each data}}
 								{{#ifNotEven @index}}
 									<li>
-								<a href="index.html"><img src="{{../smallImagePath}}" alt="Image"></a>
+								<a href="featured?id={{../id}}"><img src="{{../smallImagePath}}" alt="Image"></a>
 								<div>
-									<h3><a href="featured.html">{{../title}}</a></h3>
+									<h3><a href="featured?id={{../id}}">{{../title}}</a></h3>
 									<div>
 										<p>
 											{{../summary}}
@@ -27,9 +27,9 @@
 							</li>
 								{{else}}
 									<li>
-									<a href="index.html"><img src="{{../smallImagePath}}" alt="Image"></a>
+									<a href="featured?id={{../id}}"><img src="{{../smallImagePath}}" alt="Image"></a>
 									<div>
-										<h3><a href="featured.html">{{../title}}</a></h3>
+										<h3><a href="featured?id={{../id}}">{{../title}}</a></h3>
 										<p>
 										{{../summary}}
 										</p>
