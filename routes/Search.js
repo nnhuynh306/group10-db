@@ -35,7 +35,8 @@ router.get('/keyword', (req, res) => {
         },
     })
     .then(data => {
-        res.json(data)
+        res.locals.data = data;
+        res.render('search')
     })
 });
 
