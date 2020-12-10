@@ -24,7 +24,7 @@ app.use('/sort', require(__dirname + '/routes/sort.js'));
 
 app.get('/', (req, res) => {
     res.locals.pageTitle = `GROUP 10`
-    res.locals.homeClass = "class='current'"
+    res.locals.homeClass = 'current'
     res.render('homepage')
 })
 
