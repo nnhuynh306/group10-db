@@ -14,10 +14,11 @@ app.engine('hbs', ehbs({
 
 app.set('view engine', 'hbs');
 
-app.get('/', (req, res) => {
-    res.render('homepage')
-})
-
+app.use('/about', require(__dirname + '/routes/about.js'));
+app.use('/blog', require(__dirname + '/routes/blog.js'));
+app.use('/featured', require(__dirname + '/routes/featured.js'));
+app.use('/recipes', require(__dirname + '/routes/recipes.js'));
+app.use('/videos', require(__dirname + '/routes/videos.js'));
 
 app.set('port', process.env.PORT || 3000);
 app.listen(app.get('port'), (req, res) => {
