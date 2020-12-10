@@ -19,10 +19,8 @@ app.use('/blog', require(__dirname + '/routes/blog.js'));
 app.use('/featured', require(__dirname + '/routes/featured.js'));
 app.use('/recipes', require(__dirname + '/routes/recipes.js'));
 app.use('/videos', require(__dirname + '/routes/videos.js'));
+app.use('/sort', require(__dirname + '/routes/sort.js'));
 
-app.get('/sortAtoZ',(req,res)=>{
-    res.render('AtoZ')
-});
 
 app.get('/', (req, res) => {
     res.locals.pageTitle = `GROUP 10`
