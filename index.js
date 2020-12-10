@@ -25,6 +25,7 @@ app.get('/sortAtoZ',(req,res)=>{
 });
 
 app.get('/', (req, res) => {
+    res.locals.pageTitle = `GROUP 10`
     res.render('homepage')
 })
 
