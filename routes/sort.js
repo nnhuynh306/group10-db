@@ -7,7 +7,10 @@ router.get('/', function(req, res) {
     sortController.getAll().then(data=> {
       res.locals.data=data;
       res.render('./../views/sort',{
-        sortClass:'current'
+        sortClass:'current',
+        mssv:'18127223',
+        hoten:'Nguyen Phuc Thinh',
+        email:'18127223@student.hcmus.edu.vn'
       });
     });  
   })
@@ -30,7 +33,10 @@ router.get('/AtoZ', function(req, res) {
     data.sort(compare);
     res.locals.data=data;
     res.render('./../views/sort',{
-      sortClass:'current'
+      sortClass:'current',
+      mssv:'18127223',
+      hoten:'Nguyen Phuc Thinh',
+      email:'18127223@student.hcmus.edu.vn'
     });
   }); 
   })
@@ -52,7 +58,10 @@ router.get('/ZtoA', function(req, res) {
     data.sort(compare);
     res.locals.data=data;
     res.render('./../views/sort',{
-      sortClass:'current'
+      sortClass:'current',
+      mssv:'18127223',
+      hoten:'Nguyen Phuc Thinh',
+      email:'18127223@student.hcmus.edu.vn'
     });
   }); 
   })
@@ -61,7 +70,10 @@ router.get('/ZtoA', function(req, res) {
       sortController.getAll().then(data=> {
         res.locals.data=data;
         res.render('./../views/sort',{
-          sortClass:'current'
+          sortClass:'current',
+          mssv:'18127223',
+          hoten:'Nguyen Phuc Thinh',
+          email:'18127223@student.hcmus.edu.vn'
         });
       });  
     })
