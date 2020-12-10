@@ -20,6 +20,10 @@ app.use('/featured', require(__dirname + '/routes/featured.js'));
 app.use('/recipes', require(__dirname + '/routes/recipes.js'));
 app.use('/videos', require(__dirname + '/routes/videos.js'));
 
+app.get('/sortAtoZ',(req,res)=>{
+    res.render('AtoZ')
+});
+
 app.set('port', process.env.PORT || 3000);
 app.listen(app.get('port'), (req, res) => {
 
