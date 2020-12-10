@@ -5,6 +5,7 @@
 				<div id="content">
 					<div>
 						<div>
+							{{#each data}}
 							<h3>{{title}}</h3>
 							<p>
 								{{description}}
@@ -12,7 +13,7 @@
 							<a href="index.html"><img src={{bigImagePath}} alt="Image"></a>
 							<h5>INGREDIENTS</h5>
 							<ol class="ingredients">
-								{{#each ingredients}}
+								{{#each Ingredients}}
 									<li>
 										{{quantities}} {{title}}
 									</li>
@@ -21,12 +22,14 @@
 							</ol>
 							<h5>DIRECTIONS</h5>
 							<ol class="directions">
-								{{#each directions}}
+								{{#each Directions}}
 								<li>
-									{{descriptions}}
+									{{description}}
 								</li>
 								{{/each}}
 							</ol>
+							{{/each}}
+
 						</div>
 					</div>
 				</div>

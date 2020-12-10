@@ -1,13 +1,19 @@
 const controller ={};
 
 const models= require('../models');
+const Op = require('sequelize').Op;
 
-controller.getAll=()=>{
+controller.getAll=(query)=>{
     return models.Recipe.findAll({
+        where: {
+            id: query
+        },
         include: [{
-             model: models.Ingredient,
-             model: models.Direction,
-        }]
+             model: models.Direction
+        },
+    {
+        model: models.Ingredient
+    }]
     });
 };
 
