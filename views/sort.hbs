@@ -1,30 +1,6 @@
 <div class="body">
 		<div>
-			<div class="header">
-				<ul>
-					<li>
-						<a href="index.html">Home</a>
-					</li>
-					<li>
-						<a href="recipes.html">A to Z Recipes</a>
-					</li>
-					<li>
-						<a href="featured.html">Featured Recipes</a>
-					</li>
-					<li>
-						<a href="videos.html">Videos</a>
-					</li>
-					<li>
-						<a href="about.html">About</a>
-					</li>
-					<li>
-						<a href="blog.html">Blog</a>
-					</li>
-					<li class="current">
-						<a href="/sort">Sort</a>
-					</li>
-				</ul>
-			</div>
+			{{>nav}}
 			<div class="body">
 				<div id="content">
 					<div>
@@ -36,15 +12,17 @@
 						</div>
 					</div>
 						<ul>
+							{{#each data}}
 							<li>
-								<a href="index.html"><img src="images/fried-chicken.jpg" alt="Image"></a>
+								<a href="index.html"><img src={{smallImagePath}} alt="Image"></a>
 								<div>
-									<h3><a href="featured.html">This is just a place holder</a></h3>
+									<h3><a href="featured.html">{{title}}</a></h3>
 									<p>
-										This website template has been designed by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you&#39;re free to use this website template without linking back to us. If you&#39;re having problems editing this website template, then don&#39;t hesitate to ask for help on the <a href="http://www.freewebsitetemplates.com/forums/">Forums</a>.
+										{{summary}} <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you&#39;re free to use this website template without linking back to us. If you&#39;re having problems editing this website template, then don&#39;t hesitate to ask for help on the <a href="http://www.freewebsitetemplates.com/forums/">Forums</a>.
 									</p>
 								</div>
 							</li>
+							{{/each}}
 						</ul>
 					</div>
 				</div>
@@ -53,28 +31,28 @@
 		<div>
 			<div>
 				<h3>Cooking Video</h3>
-				<a href="videos.html"><img src="images/cooking-video.png" alt="Image"></a>
+				<a href="videos.html"><img src="/images/cooking-video.png" alt="Image"></a>
 				<span>Vegetable &amp; Rice Topping</span>
 			</div>
 			<div>
 				<h3>Featured Recipes</h3>
 				<ul id="featured">
 					<li>
-						<a href="recipes.html"><img src="images/sandwich.jpg" alt="Image"></a>
+						<a href="recipes.html"><img src="/images/sandwich.jpg" alt="Image"></a>
 						<div>
 							<h2><a href="recipes.html">Ham Sandwich</a></h2>
 							<span>by: Anna</span>
 						</div>
 					</li>
 					<li>
-						<a href="recipes.html"><img src="images/biscuit-and-coffee.jpg" alt="Image"></a>
+						<a href="recipes.html"><img src="/images/biscuit-and-coffee.jpg" alt="Image"></a>
 						<div>
 							<h2><a href="recipes.html">Biscuit &amp; Sandwich</a></h2>
 							<span>by: Sarah</span>
 						</div>
 					</li>
 					<li>
-						<a href="recipes.html"><img src="images/pizza.jpg" alt="Image"></a>
+						<a href="recipes.html"><img src="/images/pizza.jpg" alt="Image"></a>
 						<div>
 							<h2><a href="recipes.html">Delicious Pizza</a></h2>
 							<span>by: Rico</span>

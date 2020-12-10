@@ -3,14 +3,28 @@ const router = express.Router();
 
 
 router.get('/', function(req, res) {
-    res.render('sort')
+  let sortController = require('./../controller/sortController');
+    sortController.getAll().then(data=> {
+      res.locals.data=data;
+      res.render('./../views/sort',()=>{
+        nav.sortClass=current
+      });
+    });  
   })
-  
+
 router.get('/AtoZ', function(req, res) {
-    res.render('AtoZ')
+  let sortController = require('./../controller/sortController');
+  sortController.getAll().then(data=> {
+    res.locals.data=data;
+    res.render('./../views/sort');
+  }); 
   })
 router.get('/ZtoA', function(req, res) {
-    res.render('AtoZ')
+  let sortController = require('./../controller/sortController');
+  sortController.getAll().then(data=> {
+    res.locals.data=data;
+    res.render('./../views/sort');
+  }); 
   })
 
 

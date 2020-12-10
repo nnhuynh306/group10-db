@@ -21,7 +21,9 @@ fs
   })
   .forEach(file => {
     // var model = sequelize['import'](path.join(__dirname, file));
-    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes)
+    const model = require(path.join(__dirname, file))(sequelize, 
+      Sequelize);
+    db[model.name] = model;
   });
 
 Object.keys(db).forEach(modelName => {

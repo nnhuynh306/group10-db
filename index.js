@@ -10,6 +10,9 @@ app.engine('hbs', ehbs({
     defaultLayout: 'layout',
     layoutsDir: __dirname + '/views/layout',
     partialsDir: __dirname + '/views/partials',
+    runtimeOptions:{
+        allowProtoPropertiesByDefault: true
+      }
 }))
 
 app.set('view engine', 'hbs');

@@ -1,8 +1,8 @@
 {
     "development": {
         "username": "postgres",
-        "password": "",
-        "database": "CookingRecipeDB",
+        "password": "test",
+        "database": "week9",
         "host": "localhost",
         "dialect": "postgres"
     },
