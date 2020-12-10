@@ -3,10 +3,13 @@ const router = express.Router();
 
 
 router.get('/', function(req, res) {
-    res.render('AtoZ')
+    res.render('sort')
   })
   
-router.get('/', function(req, res) {
+router.get('/AtoZ', function(req, res) {
+    res.render('AtoZ')
+  })
+router.get('/ZtoA', function(req, res) {
     res.render('AtoZ')
   })
 
